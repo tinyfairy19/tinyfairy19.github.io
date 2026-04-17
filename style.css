@@ -19,12 +19,14 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: var(--bg-light-gray);
     color: var(--text-dark-gray);
-    line-height: 1.6;
+    line-height: 1.4;
+    font-size: 14px;
     overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
 }
 
 a {
@@ -38,13 +40,13 @@ a:hover {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 section {
-    padding: 80px 0;
+    padding: 40px 0;
 }
 
 /* Basic Animations */
@@ -82,7 +84,8 @@ section {
 .section-hero {
     background: linear-gradient(135deg, var(--text-dark-gray) 0%, #1a202c 100%);
     color: var(--white);
-    min-height: 100vh;
+    min-height: auto;
+    padding: 60px 0;
     display: flex;
     align-items: center;
     position: relative;
@@ -95,8 +98,8 @@ section {
     position: absolute;
     top: -10%;
     right: -5%;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     background: var(--primary-blue);
     border-radius: 50%;
     filter: blur(80px);
@@ -109,8 +112,8 @@ section {
     position: absolute;
     bottom: -10%;
     left: -5%;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     background: var(--accent-blue);
     border-radius: 50%;
     filter: blur(60px);
@@ -124,11 +127,36 @@ section {
     width: 100%;
 }
 
+.hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-image-container {
+    flex: 0 0 auto;
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-blue);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
 .hero-title {
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 900;
-    letter-spacing: -2px;
-    margin-bottom: 10px;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
     text-transform: uppercase;
     background: linear-gradient(to right, #ffffff, var(--accent-blue));
     -webkit-background-clip: text;
@@ -137,9 +165,9 @@ section {
 }
 
 .hero-email {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 300;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     opacity: 0; /* for animation */
 }
 
@@ -156,16 +184,16 @@ section {
 .hero-details {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 20px;
     opacity: 0; /* for animation */
 }
 
 .detail-block {
     flex: 1;
-    min-width: 300px;
+    min-width: 250px;
     background: rgba(255, 255, 255, 0.05);
-    padding: 30px;
-    border-radius: 16px;
+    padding: 20px;
+    border-radius: 12px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -178,8 +206,8 @@ section {
 }
 
 .detail-block h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
     color: var(--accent-blue);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -190,10 +218,10 @@ section {
 }
 
 .detail-block li {
-    margin-bottom: 15px;
-    font-size: 1.05rem;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
     position: relative;
-    padding-left: 20px;
+    padding-left: 15px;
 }
 
 .detail-block li::before {
@@ -208,17 +236,26 @@ section {
     font-weight: 700;
     color: var(--white);
     background-color: var(--primary-blue);
-    padding: 2px 6px;
+    padding: 1px 4px;
     border-radius: 4px;
 }
 
 /* Responsive tweaks for Hero */
 @media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
     .hero-details {
         flex-direction: column;
+        align-items: stretch;
+    }
+    .detail-block li {
+        text-align: left;
     }
 }
 
@@ -232,9 +269,9 @@ section {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--text-dark-gray);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     position: relative;
     display: inline-block;
 }
@@ -242,36 +279,36 @@ section {
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -8px;
     left: 0;
-    width: 60px;
-    height: 4px;
+    width: 40px;
+    height: 3px;
     background-color: var(--primary-blue);
     border-radius: 2px;
 }
 
 .publication-item {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     background: var(--white);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-left: 4px solid var(--accent-blue);
+    border-left: 3px solid var(--accent-blue);
 }
 
 .publication-item:hover {
-    transform: translateX(5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transform: translateX(3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .pub-year {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--primary-blue);
-    min-width: 80px;
-    margin-right: 20px;
+    min-width: 60px;
+    margin-right: 15px;
 }
 
 .pub-details {
@@ -279,14 +316,14 @@ section {
 }
 
 .pub-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-dark-gray);
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .pub-authors {
     color: var(--text-light-gray);
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .pub-authors strong {
@@ -295,12 +332,12 @@ section {
 
 .pub-journal {
     color: var(--text-light-gray);
-    font-size: 0.95rem;
-    margin-bottom: 15px;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
 }
 
 .pub-link {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -311,23 +348,23 @@ section {
         flex-direction: column;
     }
     .pub-year {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 }
 
 /* --- Awards --- */
 .award-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .award-item {
     background: var(--white);
-    padding: 30px;
-    border-radius: 12px;
+    padding: 20px;
+    border-radius: 8px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -339,7 +376,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 3px;
     background: var(--accent-blue);
     transform: scaleX(0);
     transform-origin: left;
@@ -347,8 +384,8 @@ section {
 }
 
 .award-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
 .award-item:hover::before {
@@ -356,20 +393,20 @@ section {
 }
 
 .award-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 .award-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-dark-gray);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .award-org {
     color: var(--text-light-gray);
-    font-size: 0.95rem;
-    margin-bottom: 5px;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
 }
 
 .award-year {
@@ -382,6 +419,6 @@ section {
     background-color: var(--text-dark-gray);
     color: var(--bg-light-gray);
     text-align: center;
-    padding: 30px 0;
-    font-size: 0.9rem;
+    padding: 20px 0;
+    font-size: 0.85rem;
 }
