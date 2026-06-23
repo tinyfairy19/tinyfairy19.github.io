@@ -183,14 +183,13 @@ section {
 
 .hero-details {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
     opacity: 0; /* for animation */
 }
 
 .detail-block {
-    flex: 1;
-    min-width: 250px;
+    width: 100%;
     background: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 12px;
